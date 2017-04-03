@@ -1,17 +1,12 @@
 package org.wso2.analytics.domain;
 
 import java.io.Serializable;
-
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-
-import org.springframework.stereotype.Component;
+import javax.persistence.*;
 
 /**
  * The primary key class for the API_REQUEST_SUMMARY database table.
  * 
  */
-@Component
 @Embeddable
 public class ApiRequestSummaryPK implements Serializable {
 	//default serial version id, required for serializable classes.

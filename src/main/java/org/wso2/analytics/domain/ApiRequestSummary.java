@@ -8,27 +8,28 @@ import javax.persistence.Entity;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-
 /**
  * The persistent class for the API_REQUEST_SUMMARY database table.
  * 
  */
 @Entity
-@Table(name="API_REQUEST_SUMMARY")
-@NamedQuery(name="ApiRequestSummary.findAll", query="SELECT a FROM ApiRequestSummary a")
+@Table(name = "API_REQUEST_SUMMARY")
+@NamedQuery(name = "ApiRequestSummary.findAll", query = "SELECT a FROM ApiRequestSummary a")
 public class ApiRequestSummary implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long	serialVersionUID	= 1L;
 
+	
+	
 	@EmbeddedId
-	private ApiRequestSummaryPK id;
+	private ApiRequestSummaryPK	id;
 
-	@Column(name="max_request_time")
-	private Long maxRequestTime;
+	@Column(name = "max_request_time")
+	private Long				maxRequestTime;
 
-	private String time;
+	private String				time;
 
-	@Column(name="total_request_count")
-	private int totalRequestCount;
+	@Column(name = "total_request_count")
+	private int					totalRequestCount;
 
 	public ApiRequestSummary() {
 	}
