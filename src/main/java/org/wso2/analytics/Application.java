@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.example;
+package org.wso2.analytics;
 
 import org.wso2.msf4j.spring.MSF4JSpringApplication;
 

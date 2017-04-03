@@ -14,17 +14,23 @@
  * limitations under the License.
  */
 
-package org.example.service;
+package org.wso2.analytics.service;
+
+import java.util.Date;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 
-import org.example.repo.TestRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.wso2.analytics.model.TopAPIUserRequest;
+import org.wso2.analytics.repo.ApiRequestSummaryDao;
 
 /**
  * This is the Microservice resource class. See <a href=
@@ -37,15 +43,21 @@ import org.springframework.stereotype.Component;
 @Path("/service")
 public class HelloService {
 	@Autowired
-	private TestRepo testRepo;
+	private ApiRequestSummaryDao apiRequestSummaryDao;
 
 	@GET
 	@Path("/")
 	public String get() {
 		// TODO: Implementation for HTTP GET request
 		System.out.println("GET invoked");
-		testRepo.test();
+		apiRequestSummaryDao.test();
 		return "Hello from WSO2 MSF4J";
+	}
+
+	@GET
+	@Path("/topAPIUsers")
+	public String myAction(@PathParam("apiName") String apiName) {
+		return apiName;
 	}
 
 	@POST
